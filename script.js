@@ -16,8 +16,12 @@ function render(library){
     //2. Append each book
     for (let i = 0; i < myLibrary.length; i++) {
 
-        //add new row
+        //add new row with ID and class
         let row = table.insertRow(0)
+        row.setAttribute('id', `${i}`)
+        if (i % 2 === 0) {row.classList.add('even')} else {row.classList.add('odd')}
+
+        //create and fill row cells
         let titleCell = row.insertCell(0)
         let authorCell = row.insertCell(1)
         let pagesCell = row.insertCell(2)
