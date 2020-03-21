@@ -18,7 +18,7 @@ function render(library = myLibrary){
 
         //add new row with ID and class
         let row = table.insertRow(0)
-        row.setAttribute('id', `${i}`)
+        row.setAttribute('id', `row${i}`)
         if (i % 2 === 0) {row.classList.add('even')} else {row.classList.add('odd')}
 
         //create and fill row cells
@@ -26,11 +26,17 @@ function render(library = myLibrary){
         let authorCell = row.insertCell(1)
         let pagesCell = row.insertCell(2)
         let readCell = row.insertCell(3)
+        let deleteButton = row.insertCell(4)
 
         titleCell.innerHTML = library[i].title
         authorCell.innerHTML = library[i].author
         pagesCell.innerHTML = library[i].pages
         readCell.innerHTML = library[i].read
+        readCell.setAttribute('onClick', 'toggleRead(this)')
+        deleteButton.innerHTML = 'Delete'
+        deleteButton.classList.add('deleteButton')
+        deleteButton.setAttribute('id', i)
+        deleteButton.setAttribute('onClick', 'removeBookFromLibrary(this.id)')
     }
 }
 
@@ -57,24 +63,23 @@ addBookToLibrary(book3)
 
 
 
-
-
-
-
-
-
-
-
-
 //remove book from myLibrary
 function removeBookFromLibrary(index, library = myLibrary) {
-    //delete book from myLibrary
-    
-    //let item = Number(element.parentElement.id)
+
     myLibrary.splice(index, 1)
-    
     render(library)
 }
 
-//toggle read / not read
+//toggles between READ/NOT-READ/READING
+function toggleRead(element) {
+    let index = element.parentElement.id.split('')[(element.parentElement.id.split('').length-1)]
+    if (element.innerHTML === 'Yes') {
+        myLibrary[index].read = 'No'
+    } else if (element.innerHTML === 'No') {
+        myLibrary[index].read = 'Reading'
+    } else if (element.innerHTML === 'Reading'){
+        myLibrary[index].read = 'Yes'
+    }
+    render(myLibrary)
 
+}
