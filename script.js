@@ -5,7 +5,7 @@ const book2 = new Book('Meditations', 'Marcus Aurelius', 200, 'Yes')
 const book3 = new Book('Thinking Fast and Slow', 'Daniel Kahneman', 400, 'No')
 
 //renders the content from myLibrary into a HTML table
-function render(library){
+function render(library = myLibrary){
     
     let table = document.getElementById('tableBody')
     
@@ -67,8 +67,13 @@ addBookToLibrary(book3)
 
 
 //remove book from myLibrary
-function removeBookFromLibrary() {
-
+function removeBookFromLibrary(index, library = myLibrary) {
+    //delete book from myLibrary
+    
+    //let item = Number(element.parentElement.id)
+    myLibrary.splice(index, 1)
+    
+    render(library)
 }
 
 //toggle read / not read
