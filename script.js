@@ -62,17 +62,18 @@ addBookToLibrary(book2)
 addBookToLibrary(book3)
 
 
-
 //remove book from myLibrary
 function removeBookFromLibrary(index, library = myLibrary) {
 
     myLibrary.splice(index, 1)
-    render(library)
+    render(myLibrary)
 }
 
 //toggles between READ/NOT-READ/READING
 function toggleRead(element) {
+
     let index = element.parentElement.id.split('')[(element.parentElement.id.split('').length-1)]
+    
     if (element.innerHTML === 'Yes') {
         myLibrary[index].read = 'No'
     } else if (element.innerHTML === 'No') {
@@ -80,6 +81,6 @@ function toggleRead(element) {
     } else if (element.innerHTML === 'Reading'){
         myLibrary[index].read = 'Yes'
     }
-    render(myLibrary)
 
+    render(myLibrary)
 }
