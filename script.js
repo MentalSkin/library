@@ -52,15 +52,27 @@ function Book(title, author, pages, read) {
 }
 
 //add a new book to myLibrary; assign to button after user input
-function addBookToLibrary(book) {
+function pushBookToLibrary(book) {
     myLibrary.push(book)
     render(myLibrary)
 }
 
-addBookToLibrary(book1)
-addBookToLibrary(book2)
-addBookToLibrary(book3)
+//create book from user input and add to library
+function createBook (){
+    let titleInput = document.getElementById('titleInput').value
+    let authorInput = document.getElementById('authorInput').value
+    let pagesInput = document.getElementById('pagesInput').value
+    let readInput = document.getElementById('readInput').value
 
+    let book = new Book(titleInput, authorInput, pagesInput, readInput)
+
+    document.getElementById('titleInput').value = ''
+    document.getElementById('authorInput').value = ''
+    document.getElementById('pagesInput').value = ''
+    document.getElementById('readInput').value = 'No'
+
+    pushBookToLibrary(book)
+}
 
 //remove book from myLibrary
 function removeBookFromLibrary(index, library = myLibrary) {
@@ -84,3 +96,8 @@ function toggleRead(element) {
 
     render(myLibrary)
 }
+
+
+pushBookToLibrary(book1)
+pushBookToLibrary(book2)
+pushBookToLibrary(book3)
