@@ -13,13 +13,27 @@ function render(library = myLibrary){
     while (table.rows.length >= 1) {
         table.deleteRow(0)
     }
+    
     //2. Append each book
+    
+        //auxiliar switch: makes the first row (after the header) always darker
+        let situation1 = ''
+        let situation2 = ''
+        if (myLibrary.length % 2 === 0) {
+            situation1 = 'even'
+            situation2 = 'odd'
+        } else {
+            situation1 = 'odd'
+            situation2 = 'even'
+        }
+
     for (let i = 0; i < myLibrary.length; i++) {
 
         //add new row with ID and class
         let row = table.insertRow(0)
+
         row.setAttribute('id', `row${i}`)
-        if (i % 2 === 0) {row.classList.add('even')} else {row.classList.add('odd')}
+        if (table.rows.length % 2 === 0) {row.classList.add(situation1)} else {row.classList.add(situation2)}
 
         //create and fill row cells
         let titleCell = row.insertCell(0)
