@@ -27,6 +27,9 @@ function render(library = myLibrary){
         let pagesCell = row.insertCell(2)
         let readCell = row.insertCell(3)
         let deleteButton = row.insertCell(4)
+        
+        pagesCell.setAttribute('class', 'toCenter')
+        readCell.setAttribute('class', 'toCenter')
 
         titleCell.innerHTML = library[i].title
         authorCell.innerHTML = library[i].author

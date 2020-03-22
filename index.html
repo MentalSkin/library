@@ -13,17 +13,14 @@
                     <label for="titleInput" class="labelInput">Title: </label>
                     <input type="text" id="titleInput" name="titleInput">
                 </div>
-                
                 <div id="authorForm" class="formField">
                     <label for="authorInput" class="labelInput">Author: </label>
                     <input type="text" id="authorInput" name="authorInput">
                 </div>
-                
                 <div id="pagesForm" class="formField">
                     <label for="pagesInput" class="labelInput">Pages: </label>
                     <input type="number" id="pagesInput" name="pagesInput">
                 </div>
-                
                 <div id="readForm" class="formField">
                     <label for="readInput" class="labelInput">Read?</label>
                     <select id="readInput">
@@ -32,7 +29,6 @@
                         <option value="Yes">Yes</option>
                     </select>
                 </div>
-                
                 <button id="addBookButton" onclick="createBook()">ADD BOOK</button>
             </div>
             <div id="tableContainer">
@@ -40,10 +36,10 @@
                     <table id="table">
                         <thead id="tableHead">
                             <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Pages</th>
-                                <th>Read?</th>
+                                <th id="titleCell">Title</th>
+                                <th id="authorCell">Author</th>
+                                <th id="pagesCell">Pages</th>
+                                <th id="readCell">Read?</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody"></tbody>

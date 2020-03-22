@@ -1,11 +1,32 @@
 html {
-    background-color: blanchedalmond;
+    background-color: #708090;
 }
 
 main {
     display: block;
     justify-content: center;
     justify-items: center;
+}
+
+/*FORM*/
+
+label {
+    display: inline-block;
+    padding: 0.25em 0 0.25em 0;
+    width: 80px;
+    font-size: large;
+}
+
+input {
+    padding: 2px 6px 2px 6px;
+    border-radius: 2px;
+    background-color: #d3d3d3;
+}
+input[type=text] {
+    width: 350px;
+}
+input[type=number] {
+    width: 50px;
 }
 
 #pageTitle {
@@ -24,24 +45,6 @@ main {
     font-variant: normal;
 }
 
-label {
-    display: inline-block;
-    padding: 0.25em 0 0.25em 0;
-    width: 80px;
-    font-size: large;
-}
-
-input[type=text] {
-    width: 350px;
-    padding: 2px 6px 2px 6px;
-    border-radius: 2px;
-}
-input[type=number] {
-    width: 50px;
-    padding: 2px 6px 2px 6px;
-    border-radius: 2px;
-}
-
 #readInput {
     padding: 2px 6px 2px 6px;
     font-weight: bold;
@@ -51,12 +54,27 @@ input[type=number] {
     margin-top: 0.5em;
     padding: 6px 10px 6px 10px;
     font-size: 16px;
+    border-radius: 6px;
     font-family: monospace;
     font-weight: bold;
 }
 
+
+/*TABLE*/
+
+th {
+    padding: 5px 10px 5px 10px;
+}
+
+.toCenter {
+    text-align: center;
+}
+
+.even {
+    background-color: cadetblue;
+}
+
 #tableContainer {
-    
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -64,9 +82,28 @@ input[type=number] {
 }
 
 #tableContent {
-    background-color: #47d4a8;
+    background-color: #d3d3d3;
+    border-radius: 5px;
     display: flex;
     justify-items: center;
     justify-content: center;
     width: fit-content;
 }
+
+#titleCell {
+    width: 300px;
+}
+#authorCell {
+    width: 300px;
+}
+#pagesCell {
+    width: 45px;
+}
+#readCell {
+    width: 60px;
+}
+
+
+/*ISSUES*/
+/*iss01 - table stripes*/
+/*iss02 - read field background: green/red/yellow*/
