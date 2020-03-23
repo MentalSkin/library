@@ -8,6 +8,15 @@ main {
     justify-items: center;
 }
 
+#pageTitle {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
 /*FORM*/
 
 label {
@@ -29,14 +38,6 @@ input[type=number] {
     width: 50px;
 }
 
-#pageTitle {
-    text-align: center;
-    font-family: monospace;
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 40px;
-}
-
 #form {
     padding: 1em 0 1em 0;
     text-align: left;
@@ -51,7 +52,21 @@ input[type=number] {
 }
 
 #addBookButton {
-    margin-top: 0.5em;
+    margin-top: 1em;
+    padding: 6px 10px 6px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#storageManagement {
+    display: block;
+    float: right;
+}
+
+.dataButton {
+    margin-top: 1em;
     padding: 6px 10px 6px 10px;
     font-size: 16px;
     border-radius: 6px;
@@ -105,5 +120,5 @@ th {
 
 
 /*ISSUES*/
-/*iss01 - table stripes*/
+/*iss01 - table stripes SOLVED! */
 /*iss02 - read field background: green/red/yellow*/
